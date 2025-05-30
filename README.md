@@ -32,7 +32,7 @@ A RESTful API built with Node.js and Express for managing book reviews. This API
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/siddharthgupta5/book-review.git
 cd book-review-api
 ```
 
@@ -47,7 +47,6 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 JWT_EXPIRE=30d
-NODE_ENV=development
 ```
 
 4. Start the server:
@@ -101,7 +100,6 @@ GET /api/books/:id
 #### Add New Book (Protected)
 ```http
 POST /api/books
-Authorization: Bearer <token>
 Content-Type: application/json
 
 {
@@ -122,7 +120,6 @@ GET /api/books/:bookId/reviews?page=1&limit=10
 #### Add Review (Protected)
 ```http
 POST /api/books/:bookId/reviews
-Authorization: Bearer <token>
 Content-Type: application/json
 
 {
@@ -134,7 +131,6 @@ Content-Type: application/json
 #### Update Review (Protected)
 ```http
 PUT /api/reviews/:id
-Authorization: Bearer <token>
 Content-Type: application/json
 
 {
@@ -146,7 +142,6 @@ Content-Type: application/json
 #### Delete Review (Protected)
 ```http
 DELETE /api/reviews/:id
-Authorization: Bearer <token>
 ```
 
 ### Search
@@ -192,11 +187,8 @@ GET /api/search?q=great&page=1&limit=10
 
 ## 🔒 Authentication
 
-The API uses JWT (JSON Web Tokens) for authentication. Protected routes require a valid JWT token in the Authorization header:
+The API uses JWT (JSON Web Tokens) for authentication. Protected routes require a valid JWT token in the Authorization header.
 
-```http
-Authorization: Bearer <token>
-```
 
 ## 📝 Design Decisions
 
@@ -246,15 +238,3 @@ book-review-api/
 ├── package.json
 └── README.md
 ```
-
-<!-- ## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the ISC License.  -->
